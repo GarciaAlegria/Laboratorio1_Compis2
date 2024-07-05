@@ -15,7 +15,8 @@
 "="                     { return '='; }
 ":"                     { return ':'; }
 [ \t]                   ;  // skip whitespace
-.|\n                    ; /* ignore all the rest */
+\n                      { return '\n'; } // recognize newlines
+.                       { return yytext[0]; } /* ignore all the rest */
 
 %%
 

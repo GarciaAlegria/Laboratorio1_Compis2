@@ -23,8 +23,8 @@ int yylex();
 program: statement_list
         ;
 
-statement_list: statement
-    | statement_list statement
+statement_list: statement '\n'         // Added newline token handling
+    | statement_list statement '\n'   // Added newline token handling
     ;
 
 statement: assignment
